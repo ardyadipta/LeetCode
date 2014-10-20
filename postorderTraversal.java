@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -19,24 +20,18 @@ public class postorderTraversal {
 	    TreeNode current = root;
 	    TreeNode popped;
 	    List<Integer> postOrderList= new ArrayList<Integer>();
-	    List<Integer> reversedPostOrderList= new ArrayList<Integer>();
-	    if(root == null){return postOrderList;}
     	TreeStack.push(current);
     	
-	    while(TreeStack.isEmpty() == false)
+	    while(!TreeStack.isEmpty() && root != null)
 	    {
 	    	popped = TreeStack.pop();
-	    	reversedPostOrderList.add(popped.val);
+	    	postOrderList.add(popped.val);
 	    	if(popped.left != null){TreeStack.push(popped.left);}
 	    	if(popped.right != null){TreeStack.push(popped.right);}
 	    }
 	    // now reverse the postOrderList
 	    
-	    for(int i = 0; i<reversedPostOrderList.size(); i++)
-	    {
-	    	postOrderList.add(reversedPostOrderList.get(reversedPostOrderList.size() - 1 -i));
-	    }
-	    
+        Collections.reverse(postOrderList);
 	    return postOrderList;
 	}
 	 
