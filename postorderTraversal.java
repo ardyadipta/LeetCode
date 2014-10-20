@@ -16,11 +16,11 @@ public class postorderTraversal {
 	 }
 	
 	public List<Integer> Solution(TreeNode root) {
-	    Stack<TreeNode> TreeStack = new Stack();
-	    TreeNode current = root;
+		Stack<TreeNode> TreeStack = new Stack();
+		TreeNode current = root;
 	    TreeNode popped;
 	    List<Integer> postOrderList= new ArrayList<Integer>();
-    	TreeStack.push(current);
+	    TreeStack.push(current);
     	
 	    while(!TreeStack.isEmpty() && root != null)
 	    {
@@ -30,8 +30,7 @@ public class postorderTraversal {
 	    	if(popped.right != null){TreeStack.push(popped.right);}
 	    }
 	    // now reverse the postOrderList
-	    
-        Collections.reverse(postOrderList);
+	    Collections.reverse(postOrderList);
 	    return postOrderList;
 	}
 	 
