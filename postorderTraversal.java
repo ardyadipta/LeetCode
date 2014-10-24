@@ -31,6 +31,11 @@ public class postorderTraversal {
 	    }
 	    // now reverse the postOrderList
 	    Collections.reverse(postOrderList);
+	    int[] A = null;
+	    A[0] = 1;
+	    int z=0;
+	    z+= 1;
+	    		
 	    return postOrderList;
 	}
 	 
