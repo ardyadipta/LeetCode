@@ -1,3 +1,7 @@
+// make a copy of a list with random arbitrary pointer for each node.
+// each node has a second pointer other than next pointer, pointing to any node in the list or null
+// the idea is, we insert a new node with the same value of the old node, and then starting from there, we can
+// make the same random pointer by pointing at the next of that randomly pointed node
 
 public class copyRandomList {
 
